@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +22,8 @@
     <div class="container hieght-full">
         <div class="weather">
             <div class="weather__content text-center">
-                <h1 class="title">Cyber Weather</h1>
+                <h1 class="title">API Weather</h1>
+                {{#if status}}
                 <section class="search">
                     <h1 class="place" id="place">{{region}}</h1>
                     <h2 class="country" id="country">{{country}}</h2>
@@ -58,6 +58,23 @@
                         </form>
                     </div>
                 </section>
+                {{else }}
+                <section class="not-search">
+                    <div>
+                        <form action="/" class="form-search container">
+                            <div class="input-group mb-3">
+                                <input type="text" name="address" class="form-control input-search" placeholder="Vị Trí"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn-search" type="submit" id="search">
+                                        Tìm Kiếm
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                {{/if}}
             </div>
         </div>
     </div>
